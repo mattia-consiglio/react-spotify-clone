@@ -14,7 +14,7 @@ const libraryReducer = (state = initialState, action) => {
 		case "REMOVE_LIBRARY_SONG": {
 			return {
 				...state,
-				songs: state.songs.filter((song) => song.id !== action.payload),
+				songs: state.songs.filter((song) => song.id !== action.payload.id),
 			};
 		}
 		default:

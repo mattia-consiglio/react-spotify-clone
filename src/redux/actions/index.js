@@ -1,6 +1,7 @@
 export const SET_SONG = "SET_SONG";
 export const SET_QUERY = "SET_QUERY";
 export const ADD_LIBRARY_SONG = "ADD_LIBRARY_SONG";
+export const REMOVE_LIBRARY_SONG = "REMOVE_LIBRARY_SONG";
 
 export const setSelectedSong = (song) => ({
 	type: SET_SONG,
@@ -26,7 +27,7 @@ export const addLibrarySong = (song) => ({
 	payload: song,
 });
 
-export const removeLibrarySong = (songId) => ({
-	type: "REMOVE_LIBRARY_SONG",
-	payload: songId,
+export const removeLibrarySong = (song) => ({
+	type: REMOVE_LIBRARY_SONG,
+	payload: song,
 });
