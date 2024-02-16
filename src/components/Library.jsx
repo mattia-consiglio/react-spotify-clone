@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Col, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { removeLibrarySong } from "../redux/actions";
+import { removeLibrarySong, setSelectedSong } from "../redux/actions";
 
 export const Library = () => {
 	const library = useSelector((state) => state.library.songs);
@@ -20,7 +20,14 @@ export const Library = () => {
 						<Col xs={12} key={song.id} className="mt-4">
 							<Row>
 								<Col xs={2}>
-									<img src={song.album.cover_small} alt={song.title} />
+									<img
+										src={song.album.cover_small}
+										alt={song.title}
+										className="cursor-pointer"
+										onClick={() => {
+											dispatch(setSelectedSong(song));
+										}}
+									/>
 								</Col>
 								<Col xs={10}>
 									<Row>
